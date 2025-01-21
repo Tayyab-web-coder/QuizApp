@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            color: #333;
+            background: linear-gradient(to bottom, #eef2f3, #cfd9df);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 700px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #007acc;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .dropdown-container {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .dropdown-label {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 600;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #007acc;
+            border-radius: 8px;
+            background: #f7f9fc;
+            font-size: 1rem;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #005f99;
+            box-shadow: 0 0 5px rgba(0, 95, 153, 0.3);
+        }
+
+        .start-button {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 25px;
+            background: #007acc;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .start-button:hover {
+            background: #005f99;
+        }
+
+        .start-button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 95, 153, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to QuizMaster!</h1>
+        <p>
+            Challenge yourself with quizzes tailored to your skills.  
+            Select your preferred level and type of quiz to get started.  
+        </p>
+
+        <div class="dropdown-container">
+            <label class="dropdown-label" for="level-select">Choose Your Level:</label>
+            <select id="level-select">
+                <option value="basic">Basic</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        </div>
+
+        <div class="dropdown-container">
+            <label class="dropdown-label" for="type-select">Choose Quiz Type:</label>
+            <select id="type-select">
+                <option value="math">Math</option>
+                <option value="coding">Coding</option>
+                <option value="general">General Knowledge</option>
+            </select>
+        </div>
+
+        <button class="start-button">Start Quiz</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

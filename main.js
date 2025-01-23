@@ -200,6 +200,8 @@ const data = [
 let StartBtn = document.querySelector('.start-button');
 let selectionLevel = document.querySelector('#level-select');
 let choiceQuestions = document.querySelector('#type-select');
+console.log(selectionLevel.value,choiceQuestions);
+
 let LevelValue;
 let ChoiceValue;
 
@@ -214,18 +216,21 @@ let DifficultSelect = (e) => {
 
 let filterData = () => {
     let copyData = [...data]
+    console.log(copyData);
+    console.log(ChoiceValue,LevelValue);
+    
     if (ChoiceValue !== undefined && LevelValue !== undefined) {
         copyData = copyData.filter((item) => item.level === LevelValue && item.type === ChoiceValue)
-    } else if(ChoiceValue !== undefined){
-        copyData = copyData.filter((item) =>item.level===selectionLevel.value && item.type === ChoiceValue)
-    } else if(LevelValue !== undefined){
-        copyData = copyData.filter((item) =>item.level===LevelValue && item.type === choiceQuestions.value)
+    } else if (ChoiceValue !== undefined) {
+        copyData = copyData.filter((item) => item.level === selectionLevel.value && item.type === ChoiceValue)
+    } else if (LevelValue !== undefined) {
+        copyData = copyData.filter((item) => item.level === LevelValue && item.type === choiceQuestions.value)
     }
-    else{
-        copyData = copyData.filter((item) =>item.level===selectionLevel.value && item.type === choiceQuestions.value)
+    else {
+        copyData = copyData.filter((item) => item.level === selectionLevel.value && item.type === choiceQuestions.value)
     }
     console.log(copyData);
-localStorage.setItem('data',JSON.stringify(copyData))
+    localStorage.setItem('data', JSON.stringify(copyData))
 }
 
 let StartQuiz = () => {

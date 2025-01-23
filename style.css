@@ -142,6 +142,7 @@ button:hover:not(:disabled) {
     padding: 10px 20px; /* Added padding */
     border-radius: 8px; /* More rounded corners */
     font-size: 1.1rem;
+    display: none;
 }
 
 .bottom-content {

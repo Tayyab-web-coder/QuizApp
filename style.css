@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #eef2f3, #cfd9df); /* New color combo */
+    background: linear-gradient(to bottom, #eef2f3, #cfd9df);
     color: #333;
     display: flex;
     flex-direction: column;
@@ -14,35 +14,41 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     margin: 0;
     padding: 0;
 }
 
 .progress {
-    width: 80%;
-    margin: 20px auto;
-    background: #ddd;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.progress-bar {
+    background: #2c8805;
     border-radius: 20px;
     overflow: hidden;
     height: 30px;
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.progress-bar {
-    background: #4caf50;
-    width: 0%;
-    height: 100%;
+    width: 80%;
     transition: width 0.5s;
 }
 
-.progress .progress-overlay {
+.progress-bar .progress-overlay {
     height: 100%;
-    background: rgba(255, 255, 255, 0.5);
+    background: #4caf50;
     position: absolute;
     top: 0;
     left: 0;
+    width: 0%;
+    overflow: hidden;
     z-index: 1;
     pointer-events: none;
 }
@@ -50,7 +56,7 @@ h1, h2, h3, h4 {
 .currentScore {
     text-align: center;
     font-weight: bold;
-    font-size: 1.4rem; /* Increased font size */
+    font-size: 1.4rem;
     margin-top: 10px;
     color: #4caf50;
 }
@@ -58,23 +64,23 @@ h1, h2, h3, h4 {
 .content {
     text-align: center;
     margin: 20px auto;
-    padding: 30px; /* Increased padding */
+    padding: 30px;
     background: #fff;
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Increased shadow */
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     width: 60%;
-    max-width: 600px; /* Max width for better responsiveness */
+    max-width: 600px;
 }
 
 .timer {
-    font-size: 2rem; /* Increased font size */
+    font-size: 2rem;
     color: #e53935;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
 .question {
-    font-size: 2rem; /* Increased font size */
+    font-size: 2rem;
     margin: 25px 0;
     color: #333;
 }
@@ -82,15 +88,15 @@ h1, h2, h3, h4 {
 .answers {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Increased gap */
+    gap: 12px;
 }
 
 .answers h3 {
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 8px; /* Slightly more rounded corners */
+    border-radius: 8px;
     text-align: center;
-    font-size: 1.1rem; /* Increased font size */
+    font-size: 1.1rem;
     background: #f9f9f9;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
@@ -112,12 +118,12 @@ h1, h2, h3, h4 {
 }
 
 button {
-    padding: 12px 25px; /* Increased padding */
-    font-size: 1.1rem; /* Slightly larger font size */
+    padding: 12px 25px;
+    font-size: 1.1rem;
     color: #fff;
     background: #2196f3;
     border: none;
-    border-radius: 8px; /* More rounded corners */
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -138,8 +144,8 @@ button:hover:not(:disabled) {
     margin: 12px;
     background: #ff9800;
     font-weight: bold;
-    padding: 10px 20px; /* Added padding */
-    border-radius: 8px; /* More rounded corners */
+    padding: 10px 20px;
+    border-radius: 8px;
     font-size: 1.1rem;
     display: none;
 }
@@ -152,8 +158,13 @@ button:hover:not(:disabled) {
 }
 
 .totalQuizRemain {
-    font-size: 1.3rem; /* Slightly larger font size */
+    font-size: 1.3rem;
     margin-top: 20px;
     color: #333;
     font-weight: bold;
+}
+
+.currentScore {
+    margin-left: 20px;
+    margin-top: 3px;
 }

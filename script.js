@@ -1,7 +1,7 @@
 
 const data = JSON.parse(localStorage.getItem('data'))
-let h1 = document.querySelector('.question')
-let div = document.querySelector('.answers')
+let question = document.querySelector('.question')
+let answers = document.querySelector('.answers')
 let Nextbutton = document.querySelector('.Nextbutton')
 let totalQuizRemain = document.querySelector('.totalQuizRemain')
 let RestartBtn = document.querySelector('.ReStart')
@@ -27,26 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 let DisplayContent = () => {
-    h1.innerHTML = ''
-    div.innerHTML = ''
+    question.innerHTML = ''
+    answers.innerHTML = ''
     currentScore.innerHTML = `${score}/${data.length}`
     if (index < data.length || data.length == 0) {
         if (data.length > 0) {
-            h1.innerHTML =`${index+1}. ${currentData.Question}`;
+            question.innerHTML = `${index + 1}. ${currentData.Question}`;
             currentData.answers.forEach((answer, index) => {
-                div.innerHTML += `<h3 class='answer' data-id='${index + 1}'>${answer}</h3>`
+                answers.innerHTML += `<h3 class='answer' data-id='${index + 1}'>${answer}</h3>`
             })
         } else {
-            h1.innerHTML = `You Have no Mcqs For Quiz`;
+            question.innerHTML = `You Have no Mcqs For Quiz`;
             RestartBtn.innerHTML = 'Back'
             RestartBtn.classList.remove('ReStart')
         }
     } else {
-        h1.innerHTML = `You Complete the Quiz Qame.`;
-        div.innerHTML = `<h4>Your Score is ${score}</h4>`
+        question.innerHTML = `You Complete the Quiz Qame.`;
+        answers.innerHTML = `<h4>Your Score is ${score}</h4>`
         RestartBtn.classList.remove('ReStart')
         Nextbutton.classList.add('Nextbutton')
-   }
+    }
     SelectAnswer()
 
 }
@@ -61,8 +61,9 @@ let SelectAnswer = () => {
                 if (target.dataset.id == currentData.ans) {
                     target.classList.add('right')
                     score++;
-                    localStorage.setItem('score',JSON.stringify(score))
-                    let percetange = Math.floor(100 / data.length);
+                    localStorage.setItem('score', JSON.stringify(score))
+                    let percetange = Math.ceil(100 / data.length);
+
                     progress_overlay.style.width = `${score * percetange}%`;
                     currentScore.innerHTML = `${score}/${data.length}`;
                     check = true

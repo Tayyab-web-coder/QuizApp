@@ -111,6 +111,7 @@ RestartBtn.addEventListener('click', () => {
     index = 0;
     localStorage.setItem('index', JSON.stringify(index))
     score = 0;
+  localStorage.setItem('score',JSON.stringify(score))
     RestartBtn.classList.add('ReStart')
     updateIndex()
     DisplayContent()
